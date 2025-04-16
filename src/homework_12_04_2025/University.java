@@ -1,5 +1,4 @@
 package homework_12_04_2025;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -8,6 +7,8 @@ import java.util.List;
 public class University {
 
     public static void main(String[] args) {
+        System.out.println("Задание №1");
+
         List<Students> students = new ArrayList<>();
         students.add(new Students("Ann", 20));
         students.add(new Students("Ivan", 18));

@@ -1,7 +1,6 @@
+//Задача №1
+
 package homework_12_04_2025;
-
-import java.util.List;
-
 public class Students {
     String name;
     Integer age;
