@@ -7,9 +7,11 @@ public class Main {
         System.out.println("Задание №1");
         Random random = new Random();
         List<Integer> num = new ArrayList<>();
+        Set<Integer> numSet = new HashSet<>();
 
-        for (int i = 0; i < 10; i++) {
-            num.add(random.nextInt(100));
+        for (int i = 0; i < 100; i++) {
+            num.add(random.nextInt(1000));
+            numSet.add(random.nextInt(1000));
         }
 
         System.out.println("Исходный список: " + num);
@@ -35,5 +37,28 @@ public class Main {
                 System.out.println(number);
             }
         }
+
+        System.out.println("-------------------------------------------");
+        System.out.println("Задание №3");
+
+        System.out.println("Исходный список: " + numSet);
+
+        int target = num.get(random.nextInt(num.size()));
+
+        long listStart = System.nanoTime();
+        for (int i = 0; i < 10000; i++) {
+            num.contains(target);
+        }
+        long listEnd = System.nanoTime();
+
+        // Поиск в Set
+        long setStart = System.nanoTime();
+        for (int i = 0; i < 10000; i++) {
+            numSet.contains(target);
+        }
+        long setEnd = System.nanoTime();
+
+        System.out.println("Время поиска в List: " + (listEnd - listStart) / 1_000_000 + " мс");
+        System.out.println("Время поиска в Set : " + (setEnd - setStart) / 1_000_000 + " мс");
     }
 }
