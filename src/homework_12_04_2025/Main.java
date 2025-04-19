@@ -60,5 +60,44 @@ public class Main {
 
         System.out.println("Время поиска в List: " + (listEnd - listStart) / 1_000_000 + " мс");
         System.out.println("Время поиска в Set : " + (setEnd - setStart) / 1_000_000 + " мс");
+
+
+        System.out.println("-------------------------------------------");
+        System.out.println("Задание №4");
+
+        Map<String, Integer> studentsScores = new HashMap<>();
+
+        studentsScores.put("Ann", 89);
+        studentsScores.put("Ivan", 90);
+        studentsScores.put("Peter", 78);
+        studentsScores.put("Victory", 95);
+        studentsScores.put("Gleb", 85);
+
+        System.out.println("Вывод HashMap на экран: ");
+        for(Map.Entry<String, Integer> entry : studentsScores.entrySet()){
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+
+        System.out.println("-------------------------------------------");
+        System.out.println("Нахождение среднего балла: ");
+
+        OptionalDouble average = studentsScores.values().stream().mapToInt(Integer::intValue).average();
+        System.out.println("Средний балл: " + (average.isPresent() ? average.getAsDouble() : "Нет данных"));
+
+        System.out.println("-------------------------------------------");
+        System.out.println("Нахождение максимального балла: ");
+
+        OptionalInt max = studentsScores.values().stream().mapToInt(Integer::intValue).max();
+        System.out.println("Максимальный балл: " + (max.isPresent() ? max.getAsInt() : "Нет данных"));
+
+        System.out.println("-------------------------------------------");
+        System.out.println("Нахождение минимального балла: ");
+
+        OptionalInt min = studentsScores.values().stream().mapToInt(Integer::intValue).min();
+        System.out.println("Минимальный балл: " + (min.isPresent() ? min.getAsInt() : "Нет данных"));
+
     }
+
+
+
 }
