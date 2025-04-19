@@ -1,5 +1,6 @@
 package homework_12_04_2025;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -82,19 +83,26 @@ public class Main {
         System.out.println("Нахождение среднего балла: ");
 
         OptionalDouble average = studentsScores.values().stream().mapToInt(Integer::intValue).average();
-        System.out.println("Средний балл: " + (average.isPresent() ? average.getAsDouble() : "Нет данных"));
+        System.out.println(average.isPresent() ? average.getAsDouble() : "Нет данных");
 
         System.out.println("-------------------------------------------");
         System.out.println("Нахождение максимального балла: ");
 
         OptionalInt max = studentsScores.values().stream().mapToInt(Integer::intValue).max();
-        System.out.println("Максимальный балл: " + (max.isPresent() ? max.getAsInt() : "Нет данных"));
+        System.out.println(max.isPresent() ? max.getAsInt() : "Нет данных");
 
         System.out.println("-------------------------------------------");
         System.out.println("Нахождение минимального балла: ");
 
         OptionalInt min = studentsScores.values().stream().mapToInt(Integer::intValue).min();
-        System.out.println("Минимальный балл: " + (min.isPresent() ? min.getAsInt() : "Нет данных"));
+        System.out.println(min.isPresent() ? min.getAsInt() : "Нет данных");
+
+        List<String> formattedList = studentsScores.entrySet().stream()
+                .map(entry -> entry.getKey() + "=" + entry.getValue())
+                .collect(Collectors.toList());
+
+        System.out.println("\nСписок строк:");
+        formattedList.forEach(System.out::println);
 
     }
 
