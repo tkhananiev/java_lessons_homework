@@ -9,33 +9,38 @@ public class University {
     public static void main(String[] args) {
         System.out.println("Задание №1");
 
-        List<Students> students = new ArrayList<>();
-        students.add(new Students("Ann", 20));
-        students.add(new Students("Ivan", 18));
-        students.add(new Students("Peter", 17));
-        students.add(new Students("Victory", 22));
-        students.add(new Students("Gleb", 19));
+        List<Student> students = new ArrayList<>();
+        students.add(new Student("Ann", 20));
+        students.add(new Student("Ivan", 18));
+        students.add(new Student("Peter", 17));
+        students.add(new Student("Victory", 22));
+        students.add(new Student("Gleb", 19));
 
 
         System.out.println("Выводим список студентов: ");
-        for (Students s : students){
+        for (Student s : students){
             System.out.println(s.getName() + " " + s.getAge());
         }
 
         System.out.println("Сортируем список по возрасту: ");
-        Comparator comparator = new Comparator<Students>() {
-            @Override
-            public int compare(Students s1 , Students s2) {
-                return Integer.compare(s1.getAge(), s2.getAge());
-            }
-        };
+//        Comparator comparator = new Comparator<Student>() {
+//            @Override
+//            public int compare(Student s1 , Student s2) {
+//                return Integer.compare(s1.getAge(), s2.getAge());
+//            }
+//        };
+
         System.out.println("  ");
         System.out.println("Выводим отсортированный список: ");
-        Collections.sort(students, comparator);
+//        Collections.sort(students, comparator);
+//        students.
+        students.stream()
+                .sorted(Comparator.comparingInt(Student :: getAge))
+                .forEach(System.out :: println);
 
-        for (Students s : students){
-            System.out.println(s.getName() + " " + s.getAge());
-        }
+//        for (Student s : students){
+//            System.out.println(s.getName() + " " + s.getAge());
+//        }
 
     }
 }

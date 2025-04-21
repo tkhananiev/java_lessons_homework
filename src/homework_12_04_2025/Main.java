@@ -79,23 +79,23 @@ public class Main {
             System.out.println(entry.getKey() + " " + entry.getValue());
         }
 
-        System.out.println("-------------------------------------------");
-        System.out.println("Нахождение среднего балла: ");
-
-        OptionalDouble average = studentsScores.values().stream().mapToInt(Integer::intValue).average();
-        System.out.println(average.isPresent() ? average.getAsDouble() : "Нет данных");
-
-        System.out.println("-------------------------------------------");
-        System.out.println("Нахождение максимального балла: ");
-
-        OptionalInt max = studentsScores.values().stream().mapToInt(Integer::intValue).max();
-        System.out.println(max.isPresent() ? max.getAsInt() : "Нет данных");
-
-        System.out.println("-------------------------------------------");
-        System.out.println("Нахождение минимального балла: ");
-
-        OptionalInt min = studentsScores.values().stream().mapToInt(Integer::intValue).min();
-        System.out.println(min.isPresent() ? min.getAsInt() : "Нет данных");
+//        System.out.println("-------------------------------------------");
+//        System.out.println("Нахождение среднего балла: ");
+//
+//        OptionalDouble average = studentsScores.values().stream().mapToInt(Integer::intValue).average();
+//        System.out.println(average.isPresent() ? average.getAsDouble() : "Нет данных");
+//
+//        System.out.println("-------------------------------------------");
+//        System.out.println("Нахождение максимального балла: ");
+//
+//        OptionalInt max = studentsScores.values().stream().mapToInt(Integer::intValue).max();
+//        System.out.println(max.isPresent() ? max.getAsInt() : "Нет данных");
+//
+//        System.out.println("-------------------------------------------");
+//        System.out.println("Нахождение минимального балла: ");
+//
+//        OptionalInt min = studentsScores.values().stream().mapToInt(Integer::intValue).min();
+//        System.out.println(min.isPresent() ? min.getAsInt() : "Нет данных");
 
         List<String> formattedList = studentsScores.entrySet().stream()
                 .map(entry -> entry.getKey() + "=" + entry.getValue())
@@ -103,6 +103,26 @@ public class Main {
 
         System.out.println("\nСписок строк:");
         formattedList.forEach(System.out::println);
+
+
+        IntSummaryStatistics stats = studentsScores
+                .values().stream()
+                .mapToInt(Integer::intValue)
+                .summaryStatistics();
+
+        System.out.println("-------------------------------------------");
+        System.out.println("Нахождение среднего балла: ");
+
+        System.out.println(stats.getAverage());
+
+        System.out.println("-------------------------------------------");
+        System.out.println("Нахождение минимального балла: ");
+        System.out.println(stats.getMin());
+
+        System.out.println("-------------------------------------------");
+        System.out.println("Нахождение максимального балла: ");
+        System.out.println(stats.getMax());
+
 
     }
 
