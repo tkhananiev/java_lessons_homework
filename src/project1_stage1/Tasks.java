@@ -1,8 +1,6 @@
 package project1_stage1;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Tasks {
     public static void main(String[] args) {
@@ -24,7 +22,10 @@ public class Tasks {
             System.out.println(rectangle.area());
             System.out.println(rectangle.toString());
         }
-
+        //16. В main перечислите все дни и распечатайте, выходной ли он.
+        for (Day day : Day.values()) {
+            System.out.println(day + " - выходной? " + day.isWeekend());
+        }
 
     }
 
