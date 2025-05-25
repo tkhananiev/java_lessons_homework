@@ -21,6 +21,5 @@ public class CollectionTasks {
             }
         }
         System.out.println(list);
-
     }
 }
