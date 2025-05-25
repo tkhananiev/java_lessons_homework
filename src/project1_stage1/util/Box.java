@@ -1,4 +1,4 @@
-package project1_stage1;
+package project1_stage1.util;
 //20. Напишите класс‑обёртку Box с одним полем value, геттером и toString().
 public class Box<T> {
     private final T value;

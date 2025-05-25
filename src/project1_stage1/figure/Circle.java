@@ -1,4 +1,4 @@
-package project1_stage1;
+package project1_stage1.figure;
 
 public class Circle extends Figure {
     private final double radius;

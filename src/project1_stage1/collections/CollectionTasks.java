@@ -1,4 +1,4 @@
-package project1_stage1;
+package project1_stage1.collections;
 
 import java.util.*;
 

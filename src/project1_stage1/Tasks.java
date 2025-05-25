@@ -1,5 +1,11 @@
 package project1_stage1;
 
+import project1_stage1.figure.Rectangle;
+import project1_stage1.figure.Square;
+import project1_stage1.person.Address;
+import project1_stage1.person.Person;
+import project1_stage1.util.Day;
+
 import java.util.*;
 
 public class Tasks {
@@ -27,7 +33,7 @@ public class Tasks {
             System.out.println(day + " - выходной? " + day.isWeekend());
         }
         //24. Класс Person содержит поле‑объект Address. Создайте экземпляр и выведите его toString().
-        Person  person = new Person("Иван", new Address("Moscow", "Arbat 12"));
+        Person person = new Person("Иван", new Address("Moscow", "Arbat 12"));
         System.out.println(person.toString());
 
     }

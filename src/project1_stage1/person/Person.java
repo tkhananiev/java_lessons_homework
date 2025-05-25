@@ -1,4 +1,4 @@
-package project1_stage1;
+package project1_stage1.person;
 //24. Класс Person содержит поле‑объект Address. Создайте экземпляр и выведите его toString().
 
 public class Person {

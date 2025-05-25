@@ -1,7 +1,5 @@
 //11. Наследуйте Square от Rectangle, конструктор принимает только side.
-package project1_stage1;
-
-import java.awt.*;
+package project1_stage1.figure;
 
 public class Square extends Rectangle {
     private double side;

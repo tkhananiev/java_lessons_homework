@@ -1,5 +1,5 @@
 //16. Создайте enum Day, метод isWeekend().
-package project1_stage1;
+package project1_stage1.util;
 
 public enum Day {
     ПОНЕДЕЛЬНИК,

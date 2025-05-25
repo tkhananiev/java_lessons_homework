@@ -1,7 +1,5 @@
 //6. Создайте класс Rectangle с полями width, height, методами area() и perimeter().
-package project1_stage1;
-
-import java.awt.*;
+package project1_stage1.figure;
 
 public class Rectangle extends Figure implements Movable {
     private double width;

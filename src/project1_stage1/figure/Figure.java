@@ -1,4 +1,4 @@
-package project1_stage1;
+package project1_stage1.figure;
 //26. Абстрактный Figure c методом area(). Rectangle и Circle от него.
 public abstract class Figure {
 
