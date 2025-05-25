@@ -27,7 +27,7 @@ public class Tasks {
             System.out.println(day + " - выходной? " + day.isWeekend());
         }
         //24. Класс Person содержит поле‑объект Address. Создайте экземпляр и выведите его toString().
-        Person  person = new Person("Иван", new Address("Moscow", "Gagarina"));
+        Person  person = new Person("Иван", new Address("Moscow", "Arbat 12"));
         System.out.println(person.toString());
 
     }

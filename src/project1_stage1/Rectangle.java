@@ -1,7 +1,9 @@
 //6. Создайте класс Rectangle с полями width, height, методами area() и perimeter().
 package project1_stage1;
 
-public class Rectangle {
+import java.awt.*;
+
+public class Rectangle extends Figure implements Movable {
     private double width;
     private double height;
     //7. В Rectangle добавьте счётчик созданных экземпляров (static int counter).
@@ -17,7 +19,7 @@ public class Rectangle {
     public Rectangle() {
         this.counter++;
     }
-
+    @Override
     public double area(){
         return width * height;
     }
@@ -46,6 +48,12 @@ public class Rectangle {
     //15. Переопределите toString() у обоих классов, чтобы вывод был Rectangle(3×4) / Square(5).
     public String toString() {
         return "Rectangle" + "(" + (int) width + "x" + (int) height + ")";
+    }
+    //25. Опишите интерфейс Movable с move(int dx,int dy). Реализуйте его в Rectangle.
+    @Override
+    public void move(int dx, int dy){
+        this.width += dx;
+        this.height += dy;
     }
 
 }
